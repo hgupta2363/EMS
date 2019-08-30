@@ -1,0 +1,45 @@
+doctype html
+head
+    title Add Employee
+    link(rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css")
+    link(rel="stylesheet" href="/css/style.css")
+
+body
+    nav.navbar.navbar-inverse
+        .container
+            .navbar-header
+                button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href='/') EMS
+            #navbar.collapse.navbar-collapse
+                ul.nav.navbar-nav
+                    li
+                        a(href='/') HOME
+                    li
+                       a(href='/add') ADD EMPLOYEE
+                    li
+                        a(href="/update") UPDATE
+                    li
+                        a(href="/remove") DELETE
+                    
+    br
+    br
+    form(action="/add" method="POST")
+        div.container
+            div.form-group
+                label(for="name") name :
+                input(type="text" name="name" class="form-control" required)
+                br
+                label(for="surname") surname :
+                input(type="text" name="surname" class="form-control" required)
+                br
+                label(for="job") job :
+                input(type="text" name="job" class="form-control" required)
+                br
+                label(for="salary") salary :
+                input(type="text" name="salary" class="form-control" required)
+                br
+                input(type="submit" class="btn btn-primary btn-lg btn-block" value="submit")

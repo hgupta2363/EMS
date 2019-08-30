@@ -1,0 +1,54 @@
+doctype html
+head
+    title Home
+    link(rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css")
+    link(rel="stylesheet" href="/css/style.css")
+
+body
+    nav.navbar.navbar-inverse
+        .container
+            .navbar-header
+                button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href='/') EMS
+            #navbar.collapse.navbar-collapse
+                ul.nav.navbar-nav
+                    li
+                        a(href='/') HOME
+                    li
+                       a(href='/add') ADD EMPLOYEE
+                    li
+                        a(href="/update") UPDATE
+                    li
+                        a(href="/remove") DELETE
+    br
+    br
+    table.table.table-striped.table-bordered.table-hover
+        thead
+            tr  
+                
+                th(scope="col") name
+                th(scope="col") Surname
+                th(scope="col") job 
+                th(scope="col") salary
+        tbody
+            each emps in emp
+                tr
+                    td= emps.name
+                    td= emps.surname
+                    td= emps.job
+                    td= emps.salary
+        
+
+
+script(src="/bower_components/jquery/dist/jquery.js")
+script(src="/bower_components/bootstrap/dist/js/bootstrap.js")
+script(src="/js/index.js")
+                    
+
+            
+
+            
